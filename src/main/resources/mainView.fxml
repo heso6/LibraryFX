@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="660.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.pawellukaszewski.controllers.MainController">
+   <children>
+      <TabPane layoutX="-5.0" prefHeight="400.0" prefWidth="668.0" style="-fx-background-color: lightblue;" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+            <Tab style="-fx-background-color: lightblue;" text="Add new customer">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="660.0">
+                     <children>
+                        <TextField fx:id="textNameNewCustomer" layoutX="74.0" layoutY="96.0" prefHeight="25.0" prefWidth="307.0" promptText="Name" />
+                        <TextField fx:id="textLastnameNewCustomer" layoutX="74.0" layoutY="129.0" prefHeight="25.0" prefWidth="307.0" promptText="Lastname" />
+                        <TextField fx:id="textPhoneNewCustomer" layoutX="74.0" layoutY="161.0" prefHeight="25.0" prefWidth="307.0" promptText="Phone number" />
+                        <Button fx:id="buttonNewCustomer" layoutX="316.0" layoutY="202.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="send" />
+                        <Text layoutX="92.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add new customer section" underline="true" wrappingWidth="271.13671875">
+                           <font>
+                              <Font name="System Bold Italic" size="22.0" />
+                           </font>
+                        </Text>
+                        <ListView fx:id="listsCustomer" layoutX="404.0" layoutY="51.0" prefHeight="320.0" prefWidth="262.0" style="-fx-border-color: #627aac; -fx-border-width: 2px; -fx-background-color: lightgray;" />
+                        <Text layoutX="404.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Card number" />
+                        <Text layoutX="536.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name - Lastname" />
+                        <Text layoutX="470.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="All customers" textAlignment="CENTER" underline="true">
+                           <font>
+                              <Font name="System Bold Italic" size="23.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="buttonRemoveCustomer" layoutX="237.0" layoutY="332.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="65.0" text="Delete" />
+                        <Text layoutX="111.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remove customers by Card number" textAlignment="CENTER" underline="true" wrappingWidth="204.63671875">
+                           <font>
+                              <Font name="System Bold Italic" size="23.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="textRemoveCustomer" layoutX="139.0" layoutY="332.0" prefHeight="25.0" prefWidth="86.0" promptText="Card number" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab style="-fx-background-color: lightblue;" text="Add new book">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="370.0" prefWidth="465.0">
+                     <children>
+                        <TextField fx:id="textTitleNewbook" layoutX="50.0" layoutY="96.0" prefHeight="25.0" prefWidth="255.0" promptText="Title" />
+                        <TextField fx:id="textAuthorNewbook" layoutX="50.0" layoutY="129.0" prefHeight="25.0" prefWidth="255.0" promptText="Author" />
+                        <TextField fx:id="textPublishedYearNewbook" layoutX="50.0" layoutY="161.0" prefHeight="25.0" prefWidth="255.0" promptText="Published Year" />
+                        <Button fx:id="buttonNewBook" layoutX="240.0" layoutY="202.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="send" />
+                        <Text layoutX="64.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add new book section" underline="true" wrappingWidth="256.13671875">
+                           <font>
+                              <Font name="System Bold Italic" size="22.0" />
+                           </font>
+                        </Text>
+                        <ListView fx:id="listsBooks" layoutX="315.0" layoutY="51.0" prefHeight="320.0" prefWidth="351.0" style="-fx-border-color: #627aac; -fx-border-width: 2px; -fx-background-color: lightgray;" />
+                        <Text layoutX="315.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book number" wrappingWidth="50.48046875" />
+                        <Text layoutX="405.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title      Author                    Published year" wrappingWidth="233.48046875" />
+                        <Text layoutX="411.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="All books" textAlignment="CENTER" underline="true">
+                           <font>
+                              <Font name="System Bold Italic" size="23.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="64.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remove customers by Card number" textAlignment="CENTER" underline="true" wrappingWidth="204.63671875">
+                           <font>
+                              <Font name="System Bold Italic" size="23.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="buttonRemoveBook" layoutX="192.0" layoutY="332.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="65.0" text="Delete" />
+                        <TextField fx:id="textRemoveBook" layoutX="92.0" layoutY="332.0" prefHeight="25.0" prefWidth="86.0" promptText="Book number" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab style="-fx-background-color: lightblue;" text="Lend book">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="371.0" prefWidth="487.0">
+                     <children>
+                        <TextField fx:id="textCustomeridAddLend" layoutX="50.0" layoutY="126.0" prefHeight="25.0" prefWidth="255.0" promptText="Customer ID" />
+                        <TextField fx:id="textbookidAddLend" layoutX="50.0" layoutY="161.0" prefHeight="25.0" prefWidth="255.0" promptText="Book ID" />
+                        <TextField fx:id="textReturnDayAddLend" layoutX="50.0" layoutY="198.0" prefHeight="25.0" prefWidth="255.0" promptText="Return day" />
+                        <Button fx:id="buttonAddLend" layoutX="240.0" layoutY="239.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="send" />
+                        <Text layoutX="64.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add new lend section" underline="true" wrappingWidth="256.13671875">
+                           <font>
+                              <Font name="System Bold Italic" size="22.0" />
+                           </font>
+                        </Text>
+                        <ListView fx:id="listsLend" layoutX="315.0" layoutY="51.0" prefHeight="320.0" prefWidth="351.0" style="-fx-border-color: #627aac; -fx-border-width: 2px; -fx-background-color: lightgray;" />
+                        <Text layoutX="315.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lend number" wrappingWidth="49.48046875" />
+                        <Text layoutX="380.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Card numebr- Book number-return day -lend day" wrappingWidth="262.48046875" />
+                        <Text layoutX="470.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="All lends" textAlignment="CENTER" underline="true">
+                           <font>
+                              <Font name="System Bold Italic" size="23.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="buttonLogout" layoutX="18.0" layoutY="332.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="Log out" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
