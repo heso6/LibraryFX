@@ -29,9 +29,9 @@
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab style="-fx-background-color: lightblue;" text="Add new employee">
+          <Tab style="-fx-background-color: lightgreen;" text="Add new employee">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: lightgreen;">
                      <children>
                         <TextField fx:id="textLogEmpRegistration" layoutX="160.0" layoutY="90.0" prefHeight="25.0" prefWidth="307.0" promptText="Login" />
                         <TextField fx:id="textNameEmpRegistration" layoutX="160.0" layoutY="126.0" prefHeight="25.0" prefWidth="307.0" promptText="Name" />

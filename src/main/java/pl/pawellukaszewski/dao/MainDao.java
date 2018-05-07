@@ -16,4 +16,8 @@ public interface MainDao {
     List<String> getAllCustomers();
 
     boolean removeCustomer(int id);
+
+    boolean removeBook(int id);
+
+    boolean removeLend(int id);
 }

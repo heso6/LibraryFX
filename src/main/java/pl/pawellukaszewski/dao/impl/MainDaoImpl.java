@@ -40,6 +40,36 @@ public class MainDaoImpl implements MainDao {
     }
 
     @Override
+    public boolean removeLend(int id) {
+        PreparedStatement preparedStatement = connector.getPreparedStatement(
+                "DELETE FROM lend WHERE id = ?"
+        );
+        try {
+            preparedStatement.setInt(1, id);
+            preparedStatement.execute();
+            preparedStatement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
+    public boolean removeBook(int id) {
+        PreparedStatement preparedStatement = connector.getPreparedStatement(
+                "DELETE FROM book WHERE id = ?"
+        );
+        try {
+            preparedStatement.setInt(1, id);
+            preparedStatement.execute();
+            preparedStatement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
     public boolean removeCustomer(int id) {
         PreparedStatement preparedStatement = connector.getPreparedStatement(
                 "DELETE FROM user WHERE id = ?"

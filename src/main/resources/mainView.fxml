@@ -26,7 +26,7 @@
                               <Font name="System Bold Italic" size="22.0" />
                            </font>
                         </Text>
-                        <ListView fx:id="listsCustomer" layoutX="404.0" layoutY="51.0" prefHeight="320.0" prefWidth="262.0" style="-fx-border-color: #627aac; -fx-border-width: 2px; -fx-background-color: lightgray;" />
+                        <ListView fx:id="listsCustomer" layoutX="404.0" layoutY="51.0" prefHeight="276.0" prefWidth="262.0" style="-fx-border-color: #627aac; -fx-border-width: 2px; -fx-background-color: lightgray;" />
                         <Text layoutX="404.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Card number" />
                         <Text layoutX="536.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name - Lastname" />
                         <Text layoutX="470.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="All customers" textAlignment="CENTER" underline="true">
@@ -41,6 +41,7 @@
                            </font>
                         </Text>
                         <TextField fx:id="textRemoveCustomer" layoutX="139.0" layoutY="332.0" prefHeight="25.0" prefWidth="86.0" promptText="Card number" />
+                        <Button fx:id="buttonLogout" layoutX="583.0" layoutY="338.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="Log out" />
                      </children>
                   </AnchorPane>
                </content>
@@ -83,7 +84,7 @@
                      <children>
                         <TextField fx:id="textCustomeridAddLend" layoutX="50.0" layoutY="126.0" prefHeight="25.0" prefWidth="255.0" promptText="Customer ID" />
                         <TextField fx:id="textbookidAddLend" layoutX="50.0" layoutY="161.0" prefHeight="25.0" prefWidth="255.0" promptText="Book ID" />
-                        <TextField fx:id="textReturnDayAddLend" layoutX="50.0" layoutY="198.0" prefHeight="25.0" prefWidth="255.0" promptText="Return day" />
+                        <TextField fx:id="textReturnDayAddLend" layoutX="50.0" layoutY="198.0" prefHeight="25.0" prefWidth="255.0" promptText="Return day (yyyy-MM-dd)" />
                         <Button fx:id="buttonAddLend" layoutX="240.0" layoutY="239.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="send" />
                         <Text layoutX="64.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add new lend section" underline="true" wrappingWidth="256.13671875">
                            <font>
@@ -98,7 +99,13 @@
                               <Font name="System Bold Italic" size="23.0" />
                            </font>
                         </Text>
-                        <Button fx:id="buttonLogout" layoutX="18.0" layoutY="332.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="Log out" />
+                        <Text layoutX="64.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remove customers by Card number" textAlignment="CENTER" underline="true" wrappingWidth="204.63671875">
+                           <font>
+                              <Font name="System Bold Italic" size="23.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="textRemoveBook1" layoutX="50.0" layoutY="332.0" prefHeight="25.0" prefWidth="86.0" promptText="Book number" />
+                        <Button fx:id="buttonRemoveBook1" layoutX="192.0" layoutY="332.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="65.0" text="Delete" />
                      </children>
                   </AnchorPane>
                </content>

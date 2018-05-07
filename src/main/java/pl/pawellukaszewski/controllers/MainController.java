@@ -3,30 +3,38 @@ package pl.pawellukaszewski.controllers;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import pl.pawellukaszewski.dao.MainDao;
 import pl.pawellukaszewski.dao.impl.MainDaoImpl;
 import pl.pawellukaszewski.models.UsersSession;
 import pl.pawellukaszewski.models.Utils;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
     @FXML
-    TextField textNameNewCustomer, textLastnameNewCustomer, textPhoneNewCustomer, textTitleNewbook, textAuthorNewbook,
-            textPublishedYearNewbook, textCustomeridAddLend, textbookidAddLend, textReturnDayAddLend, textRemoveCustomer;
+    TextField textNameNewCustomer, textLastnameNewCustomer, textPhoneNewCustomer, textTitleNewbook,
+            textAuthorNewbook, textPublishedYearNewbook, textCustomeridAddLend, textbookidAddLend,
+            textReturnDayAddLend, textRemoveCustomer, textRemoveBook;
 
     @FXML
-    Button buttonNewCustomer, buttonNewBook, buttonAddLend, buttonRemoveCustomer;
+    Button buttonNewCustomer, buttonNewBook, buttonAddLend, buttonRemoveCustomer, buttonRemoveBook,
+            buttonLogout;
 
     @FXML
     ListView<String> listsCustomer, listsBooks, listsLend;
 
+    private UsersSession session = UsersSession.getInstance();
     private ObservableList customerItems;
     private MainDao mainDao = new MainDaoImpl();
 
@@ -64,20 +72,51 @@ public class MainController implements Initializable {
         buttonNewBook.setOnMouseClicked(e -> tryAddBook());
         buttonAddLend.setOnMouseClicked(e -> tryAddLend());
         buttonRemoveCustomer.setOnMouseClicked(e -> tryRemoveCustomer());
+        buttonLogout.setOnMouseClicked(e -> logOut());
+        buttonRemoveBook.setOnMouseClicked(e -> tryRemoveBook());
+    }
+
+
+    private boolean checkRemoveBookData() {
+
+//        if (textRemoveBook.getText().trim().isEmpty()) {
+//            Utils.createSimpleDialog("Deleted", "", "Pola nie moga byc puste");
+//            return false;
+//        }
+//
+        return true;
+    }
+
+    private void tryRemoveBook() {
+        int bookID = Integer.parseInt((textRemoveBook.getText()));
+
+
+        if (!checkRemoveBookData()) {
+            return;
+        }
+        if (mainDao.removeBook(bookID)) {
+
+            Utils.createSimpleDialog("Deleted", "", "Usunieto poprawnie");
+        }
+
+        textRemoveBook.clear();
+
+        loadBooks();
+
     }
 
     private boolean checkRemoveCustomerData() {
 
-        if (textRemoveCustomer.getText().trim().isEmpty()) {
-            Utils.createSimpleDialog("Deleted", "", "Pola nie moga byc puste");
-            return false;
-        }
-
+//        if (textRemoveCustomer.getText().trim().isEmpty()) {
+//            Utils.createSimpleDialog("Deleted", "", "Pola nie moga byc puste");
+//            return false;
+//        }
+//
         return true;
     }
 
     private void tryRemoveCustomer() {
-        int userID = (textRemoveCustomer.getText().trim().length());
+        int userID = Integer.parseInt(((textRemoveCustomer.getText())));
 
 
         if (!checkRemoveCustomerData()) {
@@ -87,10 +126,9 @@ public class MainController implements Initializable {
 
             Utils.createSimpleDialog("Deleted", "", "Usunieto poprawnie");
         }
-
+        loadCustomers();
         textRemoveCustomer.clear();
 
-        loadCustomers();
 
     }
 
@@ -225,6 +263,20 @@ public class MainController implements Initializable {
     }
 
 
+    private void logOut() {
+        session.setLoggedIn(false);
+        session.setUsername(null);
+        session.setId(0);
+
+        Stage stage = (Stage) buttonLogout.getScene().getWindow();
+        try {
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("loginView.fxml"));
+            stage.setScene(new Scene(root, 600, 400));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
 }
 
 
