@@ -25,11 +25,11 @@ public class MainController implements Initializable {
     @FXML
     TextField textNameNewCustomer, textLastnameNewCustomer, textPhoneNewCustomer, textTitleNewbook,
             textAuthorNewbook, textPublishedYearNewbook, textCustomeridAddLend, textbookidAddLend,
-            textReturnDayAddLend, textRemoveCustomer, textRemoveBook;
+            textReturnDayAddLend, textRemoveCustomer, textRemoveBook, textRemoveLend;
 
     @FXML
     Button buttonNewCustomer, buttonNewBook, buttonAddLend, buttonRemoveCustomer, buttonRemoveBook,
-            buttonLogout;
+            buttonLogout, buttonRemoveLend;
 
     @FXML
     ListView<String> listsCustomer, listsBooks, listsLend;
@@ -74,6 +74,33 @@ public class MainController implements Initializable {
         buttonRemoveCustomer.setOnMouseClicked(e -> tryRemoveCustomer());
         buttonLogout.setOnMouseClicked(e -> logOut());
         buttonRemoveBook.setOnMouseClicked(e -> tryRemoveBook());
+        buttonRemoveLend.setOnMouseClicked(e -> tryRemoveLend());
+    }
+
+    private void tryRemoveLend() {
+        int lendID = Integer.parseInt((textRemoveLend.getText()));
+
+
+        if (!checkRemoveLendData()) {
+            return;
+        }
+        if (mainDao.removeLend(lendID)) {
+
+            Utils.createSimpleDialog("Deleted", "", "Usunieto poprawnie");
+        }
+
+        textRemoveLend.clear();
+
+        loadLends();
+    }
+
+    private boolean checkRemoveLendData() {
+        //        if (textRemoveLend.getText().trim().isEmpty()) {
+//            Utils.createSimpleDialog("Deleted", "", "Pola nie moga byc puste");
+//            return false;
+//        }
+//
+        return true;
     }
 
 

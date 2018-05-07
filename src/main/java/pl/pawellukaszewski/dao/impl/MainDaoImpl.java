@@ -154,13 +154,13 @@ public class MainDaoImpl implements MainDao {
         try {
 
             PreparedStatement preparedStatementInsert = connector.getPreparedStatement(
-                    "INSERT INTO lend VALUES(?,?,?,?,?)");
+                    "INSERT INTO lends VALUES(?,?,?,?,?)");
 
             preparedStatementInsert.setInt(1, 0);
             preparedStatementInsert.setInt(2, userId);
             preparedStatementInsert.setInt(3, bookId);
-            preparedStatementInsert.setString(4, returnDate);
-            preparedStatementInsert.setDate(5, null);
+            preparedStatementInsert.setDate(4, null);
+            preparedStatementInsert.setString(5, returnDate);
             preparedStatementInsert.execute();
             preparedStatementInsert.close();
             return true;
@@ -177,13 +177,13 @@ public class MainDaoImpl implements MainDao {
 
 
         PreparedStatement preparedStatement = connector.getPreparedStatement(
-                "SELECT id,user,book, date, returnDate FROM lend ORDER BY `lend`.`id` DESC");
+                "SELECT id,userID,bookID, returnDate, date FROM lends ORDER BY `lends`.`id` DESC");
 
         try {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                lendsList.add(resultSet.getString("id") + "\t\t\t" + resultSet.getString("user") + " | " + resultSet.getString("book") +
-                        " | " + resultSet.getString("date") + " | " + resultSet.getString("returnDate"));
+                lendsList.add(resultSet.getString("id") + "\t\t\t" + resultSet.getString("userID") + " | " + resultSet.getString("bookID") +
+                        " | " + resultSet.getString("returnDate") + " | " + resultSet.getString("date"));
 
             }
             preparedStatement.execute();

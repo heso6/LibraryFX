@@ -82,11 +82,11 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="371.0" prefWidth="487.0">
                      <children>
-                        <TextField fx:id="textCustomeridAddLend" layoutX="50.0" layoutY="126.0" prefHeight="25.0" prefWidth="255.0" promptText="Customer ID" />
-                        <TextField fx:id="textbookidAddLend" layoutX="50.0" layoutY="161.0" prefHeight="25.0" prefWidth="255.0" promptText="Book ID" />
-                        <TextField fx:id="textReturnDayAddLend" layoutX="50.0" layoutY="198.0" prefHeight="25.0" prefWidth="255.0" promptText="Return day (yyyy-MM-dd)" />
-                        <Button fx:id="buttonAddLend" layoutX="240.0" layoutY="239.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="send" />
-                        <Text layoutX="64.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add new lend section" underline="true" wrappingWidth="256.13671875">
+                        <TextField fx:id="textCustomeridAddLend" layoutX="50.0" layoutY="96.0" prefHeight="25.0" prefWidth="255.0" promptText="Customer ID" />
+                        <TextField fx:id="textbookidAddLend" layoutX="50.0" layoutY="129.0" prefHeight="25.0" prefWidth="255.0" promptText="Book ID" />
+                        <TextField fx:id="textReturnDayAddLend" layoutX="50.0" layoutY="161.0" prefHeight="25.0" prefWidth="255.0" promptText="Return day (yyyy-MM-dd)" />
+                        <Button fx:id="buttonAddLend" layoutX="240.0" layoutY="202.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="send" />
+                        <Text layoutX="64.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add new lend section" underline="true" wrappingWidth="256.13671875">
                            <font>
                               <Font name="System Bold Italic" size="22.0" />
                            </font>
@@ -99,13 +99,13 @@
                               <Font name="System Bold Italic" size="23.0" />
                            </font>
                         </Text>
-                        <Text layoutX="64.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remove customers by Card number" textAlignment="CENTER" underline="true" wrappingWidth="204.63671875">
+                        <Text layoutX="64.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remove customers by Card number" textAlignment="CENTER" underline="true" wrappingWidth="204.63671875">
                            <font>
                               <Font name="System Bold Italic" size="23.0" />
                            </font>
                         </Text>
-                        <TextField fx:id="textRemoveBook1" layoutX="50.0" layoutY="332.0" prefHeight="25.0" prefWidth="86.0" promptText="Book number" />
-                        <Button fx:id="buttonRemoveBook1" layoutX="192.0" layoutY="332.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="65.0" text="Delete" />
+                        <TextField fx:id="textRemoveLend" layoutX="92.0" layoutY="332.0" prefHeight="25.0" prefWidth="86.0" promptText="Book number" />
+                        <Button fx:id="buttonRemoveLend" layoutX="192.0" layoutY="332.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="65.0" text="Delete" />
                      </children>
                   </AnchorPane>
                </content>
